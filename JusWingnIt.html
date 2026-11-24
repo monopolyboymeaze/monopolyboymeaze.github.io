@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>JusWingnIt – Just Wing It. Good finds, zero stress.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest:#0E2619; --deep:#091A11; --moss:#17402B; --line:#2A5A41;
+  --gold:#D4A63F; --gold-soft:#E8C878; --cream:#F2E8D0; --tan:#C9B58C;
+  color-scheme:dark; box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--forest);color:var(--cream);font:400 1rem/1.6 Figtree,system-ui,sans-serif}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+header{display:flex;align-items:center;justify-content:space-between;padding:18px 0;border-bottom:1px solid var(--line)}
+.logo{font:800 1.4rem Fraunces,Georgia,serif;text-decoration:none;letter-spacing:.01em}
+.logo span{color:var(--gold)}
+.saved-btn{background:none;border:1px solid var(--gold);color:var(--gold-soft);border-radius:999px;padding:8px 16px;font:500 .9rem Figtree,sans-serif;cursor:pointer}
+.saved-btn:hover{background:var(--gold);color:var(--deep)}
+.hero{padding:64px 0 36px}
+.hero h1{font:800 clamp(3rem,10vw,6.5rem)/.95 Fraunces,Georgia,serif;margin:0 0 18px;letter-spacing:-.02em}
+.hero p{font-size:1.25rem;color:var(--tan);margin:0 0 28px;max-width:34ch}
+.btn{display:inline-block;background:var(--gold);color:var(--deep);font-weight:700;text-decoration:none;padding:13px 26px;border-radius:999px;border:0;cursor:pointer;font-size:1rem}
+.btn:hover{background:var(--gold-soft)}
+.promos{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:20px 0 56px}
+.promo{display:block;text-decoration:none;background:linear-gradient(135deg,var(--moss),var(--deep));border:1px solid var(--gold);border-radius:18px;padding:26px;position:relative;overflow:hidden}
+.promo::after{content:"";position:absolute;right:-30px;top:-30px;width:110px;height:110px;border-radius:50%;border:2px dashed var(--gold);opacity:.5}
+.promo h2{font:800 1.5rem Fraunces,Georgia,serif;margin:0 0 6px;color:var(--gold-soft)}
+.promo p{margin:0 0 14px;color:var(--cream)}
+.promo b{color:var(--gold)}
+.promo:hover{border-color:var(--gold-soft)}
+h2.sec{font:800 2rem Fraunces,Georgia,serif;margin:0 0 16px}
+.tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:22px}
+.chip{background:transparent;border:1px solid var(--line);color:var(--tan);border-radius:999px;padding:8px 16px;font:500 .9rem Figtree,sans-serif;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--cream);color:var(--deep);border-color:var(--cream)}
+.search{flex:1;min-width:180px;background:var(--deep);border:1px solid var(--line);border-radius:999px;padding:9px 16px;color:var(--cream);font:400 .95rem Figtree,sans-serif}
+.search::placeholder{color:var(--tan);opacity:.7}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+.card{background:var(--moss);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.tile{height:150px;display:grid;place-items:center;font-size:3.4rem;background:var(--deep);border-bottom:2px solid var(--gold)}
+.body{padding:16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.body h3{margin:0;font:600 1.1rem Fraunces,Georgia,serif}
+.cat{color:var(--tan);font-size:.85rem}
+.price{color:var(--gold-soft);font-weight:700}
+.row{display:flex;gap:8px;margin-top:auto;padding-top:10px}
+.row a,.row button{flex:1;text-align:center;font:700 .88rem Figtree,sans-serif;padding:10px;border-radius:10px;cursor:pointer;text-decoration:none}
+.row a{background:var(--gold);color:var(--deep);border:0}
+.row button{background:transparent;color:var(--cream);border:1px solid var(--tan)}
+.row button[aria-pressed="true"]{background:var(--cream);color:var(--deep)}
+.empty{color:var(--tan);padding:30px 0}
+.signup{margin:64px 0;background:var(--cream);color:var(--deep);border-radius:20px;padding:34px;display:grid;gap:14px}
+.signup h2{font:800 1.8rem Fraunces,Georgia,serif;margin:0}
+.signup form{display:flex;flex-wrap:wrap;gap:10px}
+.signup input{flex:1;min-width:200px;border:1px solid var(--tan);background:#fff8e6;border-radius:999px;padding:12px 18px;font:400 1rem Figtree,sans-serif;color:var(--deep)}
+.signup .btn{background:var(--forest);color:var(--cream)}
+.signup .btn:hover{background:var(--moss)}
+#msg{margin:0;font-weight:500;min-height:1.4em}
+footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--tan);font-size:.88rem}
+.panel{position:fixed;top:0;right:0;height:100%;width:min(380px,100%);background:var(--deep);border-left:1px solid var(--gold);padding:calc(24px + env(safe-area-inset-top,0px)) 22px calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(100%);transition:transform .25s;overflow-y:auto;z-index:20}
+.panel.open{transform:none}
+.panel h2{font:800 1.5rem Fraunces,Georgia,serif;margin:0 0 14px}
+.panel li{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);list-style:none}
+.panel ul{padding:0;margin:0 0 16px}
+.panel .x{float:right;background:none;border:0;color:var(--gold-soft);font-size:1.6rem;cursor:pointer;line-height:1}
+.panel li a{color:var(--gold-soft)}
+@media (prefers-reduced-motion:reduce){.panel{transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="logo" href="#top">Jus<span>Wing</span>nIt</a>
+    <button class="saved-btn" id="openSaved" aria-controls="panel">Saved (<span id="count">0</span>)</button>
+  </header>
+
+  <section class="hero" id="top">
+    <h1>Just Wing It.</h1>
+    <p>Good finds, zero stress. Women’s and men’s clothing plus the hottest sellers, all in one place.</p>
+    <a class="btn" href="#shop">Start shopping</a>
+  </section>
+
+  <section class="promos" aria-label="Current promotions">
+    <a class="promo" href="https://temu.to/k/pmrotn96b1a" target="_blank" rel="noopener sponsored">
+      <h2>New to Temu?</h2>
+      <p>Grab the new-app coupon bundle and see this week’s best sellers.</p>
+      <b>Claim the bundle</b>
+    </a>
+    <a class="promo" href="https://temu.to/k/pz0l7buci8x" target="_blank" rel="noopener sponsored">
+      <h2>Trusted brand choices</h2>
+      <p>Winter shoes and jackets picked for the cold months ahead.</p>
+      <b>Shop winter picks</b>
+    </a>
+  </section>
+
+  <section id="shop">
+    <h2 class="sec">Today’s good finds</h2>
+    <div class="tools">
+      <button class="chip" data-cat="All" aria-pressed="true">All</button>
+      <button class="chip" data-cat="Women" aria-pressed="false">Women</button>
+      <button class="chip" data-cat="Men" aria-pressed="false">Men</button>
+      <button class="chip" data-cat="Hot finds" aria-pressed="false">Hot finds</button>
+      <input class="search" id="q" type="search" placeholder="Search jackets, boots, hoodies" aria-label="Search products">
+    </div>
+    <div class="grid" id="grid"></div>
+    <p class="empty" id="empty" hidden>Nothing matches that search. Try a different word or pick All.</p>
+  </section>
+
+  <section class="signup">
+    <h2>Get the good finds first</h2>
+    <p style="margin:0">Join the list for new drops and deals. No spam.</p>
+    <form id="form" novalidate>
+      <input type="email" id="email" placeholder="you@email.com" aria-label="Email address" required>
+      <button class="btn" type="submit">Join the list</button>
+    </form>
+    <p id="msg" role="status"></p>
+  </section>
+
+  <footer>© JusWingnIt. Some links are affiliate links, so we may earn a commission at no extra cost to you.</footer>
+</div>
+
+<aside class="panel" id="panel" aria-label="Saved items">
+  <button class="x" id="closeSaved" aria-label="Close saved items">×</button>
+  <h2>Saved finds</h2>
+  <ul id="savedList"></ul>
+  <p id="savedEmpty">Tap Save on any product and it shows up here.</p>
+</aside>
+
+<script>
+var LINK="https://temu.to/k/pmrotn96b1a";
+var P=[
+ {n:"Cozy knit cardigan",c:"Women",p:"$24.99",e:"🧥"},
+ {n:"High-waist leggings",c:"Women",p:"$16.99",e:"👖"},
+ {n:"Faux-leather jacket",c:"Women",p:"$39.99",e:"🧥"},
+ {n:"Fur-lined winter boots",c:"Women",p:"$34.99",e:"🥾"},
+ {n:"Fleece pullover hoodie",c:"Men",p:"$27.99",e:"👕"},
+ {n:"Cargo joggers",c:"Men",p:"$22.99",e:"👖"},
+ {n:"Quilted puffer jacket",c:"Men",p:"$44.99",e:"🧥"},
+ {n:"Canvas low-top sneakers",c:"Men",p:"$26.99",e:"👟"},
+ {n:"LED strip lights",c:"Hot finds",p:"$11.99",e:"💡"},
+ {n:"Adjustable phone stand",c:"Hot finds",p:"$7.99",e:"📱"}
+];
+var cat="All",term="",saved=[];
+try{saved=JSON.parse(localStorage.getItem("jwi-saved")||"[]")}catch(e){saved=[]}
+var $=function(id){return document.getElementById(id)};
+
+function persist(){try{localStorage.setItem("jwi-saved",JSON.stringify(saved))}catch(e){}}
+function render(){
+  var g=$("grid"),html="",n=0;
+  P.forEach(function(x,i){
+    if(cat!=="All"&&x.c!==cat)return;
+    if(term&&(x.n+" "+x.c).toLowerCase().indexOf(term)<0)return;
+    n++;
+    var on=saved.indexOf(i)>-1;
+    html+='<article class="card"><div class="tile" aria-hidden="true">'+x.e+'</div><div class="body"><h3>'+x.n+'</h3><span class="cat">'+x.c+'</span><span class="price">'+x.p+'</span><div class="row"><a href="'+LINK+'" target="_blank" rel="noopener sponsored">Get it</a><button data-i="'+i+'" aria-pressed="'+on+'">'+(on?"Saved":"Save")+'</button></div></div></article>';
+  });
+  g.innerHTML=html;
+  $("empty").hidden=n>0;
+  $("count").textContent=saved.length;
+  var l="";
+  saved.forEach(function(i){l+='<li><span>'+P[i].n+'</span><a href="'+LINK+'" target="_blank" rel="noopener sponsored">Get it</a></li>'});
+  $("savedList").innerHTML=l;
+  $("savedEmpty").hidden=saved.length>0;
+}
+document.addEventListener("click",function(e){
+  var b=e.target.closest("button[data-i]");
+  if(b){var i=+b.dataset.i,k=saved.indexOf(i);if(k>-1)saved.splice(k,1);else saved.push(i);persist();render();return}
+  var c=e.target.closest(".chip");
+  if(c){cat=c.dataset.cat;document.querySelectorAll(".chip").forEach(function(x){x.setAttribute("aria-pressed",x===c)});render()}
+});
+$("q").addEventListener("input",function(e){term=e.target.value.trim().toLowerCase();render()});
+$("openSaved").addEventListener("click",function(){$("panel").classList.add("open")});
+$("closeSaved").addEventListener("click",function(){$("panel").classList.remove("open")});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")$("panel").classList.remove("open")});
+$("form").addEventListener("submit",function(e){
+  e.preventDefault();
+  var v=$("email").value.trim(),m=$("msg");
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)){m.textContent="Enter a valid email, like you@email.com.";return}
+  m.textContent="You’re on the list. Thanks for joining!";$("email").value="";
+});
+render();
+</script>
+</body>
+</html>
